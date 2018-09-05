@@ -1,0 +1,40 @@
+@mixin sns_transition($duration) {
+    transition: height $duration, width $duration, background  $duration, border $duration, margin $duration;
+    -moz-transition: height $duration, width $duration, background  $duration, border $duration, margin $duration;
+    -webkit-transition: height $duration, width $duration, background  $duration, border $duration, margin $duration;
+    -o-transition: height $duration, width $duration, background  $duration, border $duration, margin $duration;
+    -ms-transition: height $duration, width $duration, background  $duration, border $duration, margin $duration;
+}
+
+@mixin sns_transition_background($duration) {
+    transition: background $duration, color $duration;
+    -moz-transition: background $duration, color $duration;
+    -webkit-transition: background $duration, color $duration;
+    -o-transition: background $duration, color $duration;
+    -ms-transition: background $duration, color $duration;
+}
+
+@mixin sns_transition_all($duration) {
+    transition: all $duration;
+    -moz-transition: all $duration;
+    -webkit-transition: all $duration;
+    -o-transition: all $duration;
+    -ms-transition: all $duration;
+}
+
+@mixin sns_transition_width($duration){
+    transition: width $duration;
+    -moz-transition: width $duration;
+    -webkit-transition: width $duration;
+    -o-transition: width $duration;
+    -ms-transition: width $duration;
+}
+
+
+@mixin sns_user_select($value){
+    user-select: $value;
+    -moz-user-select: $value;
+    -webkit-user-select: $value;
+    -o-user-select: $value;
+    -ms-user-select: $value;
+}

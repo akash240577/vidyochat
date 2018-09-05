@@ -1,0 +1,219 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import './pre';
+@import './variables';
+@import './mixins';
+
+
+.sn-tooltip {
+    position: relative;
+    @include sns_user_select(none);
+    .sn-tooltip-text {
+        position: absolute;
+        top: 0px;
+        left: 100%;
+        z-index: 100;
+        width: auto;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        background:white;
+        padding-top:20%;
+        padding-left:20px;
+        padding-right:20px;
+        margin-left:2px;
+        background:rgba(18, 143, 234, 0.9);
+        color:white !important;
+        display:none;        
+    }      
+    &:hover{      
+        .sn-tooltip-text{
+            display:block;
+        }
+    }
+}
+
+#sn-top-wrapper {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    color: #ffffff; 
+    background: rgba(18, 143, 234, 0.8);  
+    @include sns_user_select(none);  
+    .sn-inner-wrapper {
+        background: rgba(18, 143, 234, 0.7);
+        overflow: hidden;
+
+        .sn-menu-item {
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            overflow: hidden;
+            @include sns_transition_background(0.5s);
+            &:hover {
+                background: rgba(0, 0, 0, 0.1);                        
+            }
+        }        
+        .sn-logo-item {
+            display: inline-block;
+            text-align: center;        
+            overflow: hidden; 
+            font-size:13pt;         
+        }
+    }    
+}
+
+#sn-left-wrapper 
+{
+    position: fixed;
+    left: 0px;
+    background: rgba(255, 255, 255, 0.8);    
+    @include sns_user_select(none);    
+    .sn-inner-wrapper {
+        background: rgba(255, 255, 255, 0.6);
+    }
+    .sn-menu-item {    
+        cursor: pointer;
+        color: #909090;        
+        @include sns_transition_background(0.5s);
+        &:hover {            
+            color: rgba(18, 143, 234, 1);         
+        }
+    }
+}
+
+#sn-right-wrapper {
+    position: fixed;
+    right: 0px;
+}
+
+#sn-main-wrapper {
+    position: fixed;
+}
+
+.sn-page-content {
+    color: #383838;
+    position: relative;
+    text-align: justify;
+    background: rgba(255, 255, 255, 0.8);    
+    .sn-inner-wrapper {
+        overflow: auto;
+    }
+    .sn-page-content-top 
+    {
+        background: rgba(255, 255, 255, 0.8);
+        @include sns_user_select(none);
+        .sn-content-header 
+        {
+            font-size: 12pt;
+            color: #0769ad;
+            padding-left: 6px;            
+        }
+        .sn-menu-item 
+        {
+            cursor: pointer;
+            color: #A0A0A0;
+            @include sns_transition_background(0.5s);
+            &:hover {
+                color: rgba(18, 143, 234, 0.9);
+                color:rgba(97,196,0, 0.7);
+            }
+        }
+    }
+    .sn-page-content-container {
+        background: rgba(255, 255, 255, 0.7);
+    }
+    .sn-page-content-bottom {
+        background: rgba(255, 255, 255, 0.7);
+        @include sns_user_select(none);
+        .sn-inner-wrapper {
+            overflow: hidden;
+        }
+        .sn-menu-item {
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+            overflow: hidden;
+            color: #A0A0A0;
+            @include sns_transition_background(0.5s);
+            &:hover {                
+                background: rgba(18, 143, 234, 0.8);   
+                color : white;
+            }
+        }
+    }
+}
+
+.sn-modal {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+    text-align: center;
+    color: #383838;
+    display: none;
+    .sn-inner-wrapper {
+        position:relative;
+        .sn-modal-container {
+            position:absolute;            
+            background: white;
+            padding: 5px 10px;            
+            width: auto;  
+            border:1px solid silver;     
+            border-radius:10px;     
+            .sn-modal-header {
+                border-bottom: 1px solid silver;
+                padding: 5px 10px;
+                margin-bottom: 20px;
+                font-size: 13pt;  
+                text-shadow: 0px 0px 1px #999; 
+                color: #666;             
+            }
+            .sn-modal-content-text{
+                padding: 10px 10px 0px 10px;
+            }
+            .sn-modal-content-control{
+                padding: 5px;
+                input, select{
+                    width:90%;
+                    height:30px;  
+                    padding:5px;    
+                                
+                }                
+            }
+            .sn-modal-error{
+                color:red;
+                width:auto;
+                display: none;
+            }
+        }
+        .sn-modal-content-bottom{
+            margin-top:20px;
+            border-top: 1px solid silver;
+            padding: 10px 10px;
+            input, select{
+                width:90%;
+                height:27px;    
+                background: #128fea;
+                color:white; 
+                border:0px; 
+                @include sns_transition_background(0.5s);
+                &:hover {                
+                    background: rgba(18, 143, 234, 0.8);   
+                    color : white;
+                    cursor:pointer;
+                }              
+            }
+            
+        }
+
+    }
+}
+
+
+
+
+// BootStrap Modal
+
+
