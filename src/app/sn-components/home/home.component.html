@@ -1,70 +1,31 @@
+<div class="row" style="width: 100%; height: 100%">
 
-<div class="sn-page-content">
-  <div class="sn-page-content-top">
-    <div class="sn-inner-wrapper" data-sn-padding="1">
-      <div class="sn-content-header sn-float-left">
-        <span class="sn-block-td">Vidyo Connecting....</span>
-      </div>
-      <div class="sn-menu-item sn-float-right">
-        <span class="sn-menu-icon material-icons">mic</span>
-      </div>
-      <div class="sn-menu-item sn-float-right">
-        <span class="sn-menu-icon material-icons">call</span>
-      </div>      
-      <div class="sn-menu-item sn-float-right sn-vidyo-videocam" appJoinVidyoCall>
-        <span class="sn-menu-icon material-icons">videocam</span>
-      </div>      
+  <div class="col-md-1">
+    <div class="sn-menu-item">
+      <span class="sn-menu-icon material-icons">supervisor_account</span>
     </div>
   </div>
 
-  <div class="sn-page-content-container">
-    <div id="sn-vidyo-container" class="sn-inner-wrapper" data-sn-padding="10">
-    </div>
-  </div>
-
-  <div class="sn-page-content-bottom">
-    <div class="sn-inner-wrapper sn-text-center" data-sn-padding="5">
-      <div class="sn-menu-item sn-float-left" data-sn-padding="20">
-        <span class="sn-block-td">Participants</span>
+  <div class="col-md-10">
+    <div class="sn-page-content">
+      <div class="sn-page-content-top">
+        <div class="sn-inner-wrapper" data-sn-padding="1">
+          <div class="sn-content-header sn-float-left">
+            <span class="sn-block-td">Vidyo Connecting....</span>
+          </div>
+          <div class="sn-menu-item sn-float-right">
+            <span class="sn-menu-icon material-icons">mic</span>
+          </div>
+          <div class="sn-menu-item sn-float-right">
+            <span class="sn-menu-icon material-icons">call</span>
+          </div>
+          <div class="sn-menu-item sn-float-right sn-vidyo-videocam" appJoinVidyoCall>
+            <span class="sn-menu-icon material-icons">videocam</span>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-
-
-<!-- ----------------------------------------------------------------------------------------- -->
-<div class="sn-modal sn-vidyo-user-details">
-  <div class="sn-inner-wrapper" data-sn-padding="1">
-    <div class="sn-modal-container">
-      <div class="sn-modal-header">User Details</div>
-
-
-      <div class="sn-modal-content">
-        <div class="sn-modal-content-text">
-          Enter Name
-        </div>
-        <div class="sn-modal-content-control">
-          <input type="text" class="txt-user-details-name" value="ac">
-        </div>
-        <span class="sn-modal-error user-name">Please enter name.</span>
-        <div class="sn-modal-content-text">
-          Select Room
-        </div>
-        <div class="sn-modal-content-control">
-          <select class="txt-user-details-room">
-            <option value="0">Select</option>
-            <option value="1">Desk</option>
-            <option value="2" selected>BoardRoom</option>
-            <option value="3">MeetingRoom</option>
-          </select>
-        </div>
-        <span class="sn-modal-error user-room">Please select room.</span>
-      </div>
-
-      <div class="sn-modal-content-bottom">
-        <input type="button" value="Submit" class="btn-sn-vidyo-user-details-submit">
-      </div>
-
+    <div id="vidyo-container" style="width: 100%; height: 100%">
     </div>
   </div>
 </div>

@@ -19,20 +19,20 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
-      "styles": [        
-        "../node_modules/bootstrap/dist/css/bootstrap.css",         
-        "scss/styles.scss"             
-      ], 
+      "styles": [
+        "../node_modules/bootstrap/dist/css/bootstrap.css",
+        "scss/styles.scss"
+      ],
       "stylePreprocessorOptions": {
         "includePaths": [
           "../node_modules/bootstrap/scss"
         ]
-      },     
+      },
       "scripts": [
         "assets/scripts/jquery-3.3.1.slim.min.js",
-        "../node_modules/jquery/dist/jquery.min.js",               
-        "assets/scripts/sn.js",      
-        "assets/scripts/generateToken.js"     
+        "../node_modules/jquery/dist/jquery.min.js",
+        "assets/scripts/sn.js",
+        "assets/scripts/generateToken.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
@@ -41,7 +41,7 @@
       },
       "serviceWorker": true
     }
-  ],  
+  ],
   "e2e": {
     "protractor": {
       "config": "./protractor.conf.js"
