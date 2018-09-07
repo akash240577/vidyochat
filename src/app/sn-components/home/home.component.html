@@ -3,6 +3,10 @@
   <div class="col-md-1">
     <div class="sn-menu-item">
       <span class="sn-menu-icon material-icons">supervisor_account</span>
+      <div>Participants</div>
+      <ul>
+        <li *ngFor="let pt of participants">{{pt.participantName}}</li>
+      </ul>
     </div>
   </div>
 
@@ -11,21 +15,22 @@
       <div class="sn-page-content-top">
         <div class="sn-inner-wrapper" data-sn-padding="1">
           <div class="sn-content-header sn-float-left">
-            <span class="sn-block-td">Vidyo Connecting....</span>
+            <span
+              class="sn-block-td">{{connected === true ? 'You are Connected to the Conference' : 'Disconnected from the Conference'}}</span>
           </div>
-          <div class="sn-menu-item sn-float-right">
+          <div class="sn-menu-item sn-float-right" (click)="toggleMic()">
             <span class="sn-menu-icon material-icons">mic</span>
           </div>
-          <div class="sn-menu-item sn-float-right">
+          <div class="sn-menu-item sn-float-right" (click)="toggleConnect()">
             <span class="sn-menu-icon material-icons">call</span>
           </div>
-          <div class="sn-menu-item sn-float-right sn-vidyo-videocam" appJoinVidyoCall>
+          <div class="sn-menu-item sn-float-right sn-vidyo-videocam" (click)="togglePreview()">
             <span class="sn-menu-icon material-icons">videocam</span>
           </div>
         </div>
       </div>
     </div>
-    <div id="vidyo-container" style="width: 100%; height: 100%">
+    <div id="vidyo-container" style="width: 100%; height: 80%;">
     </div>
   </div>
 </div>

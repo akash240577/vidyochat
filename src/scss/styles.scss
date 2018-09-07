@@ -2,7 +2,7 @@
 @import './pre';
 @import './variables';
 @import './mixins';
-
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 .sn-tooltip {
   position: relative;
   @include sns_user_select(none);
@@ -111,7 +111,7 @@
     }
     .sn-menu-item {
       cursor: pointer;
-      color: #A0A0A0;
+      color: #2aa02b;
       @include sns_transition_background(0.5s);
       &:hover {
         color: rgba(18, 143, 234, 0.9);

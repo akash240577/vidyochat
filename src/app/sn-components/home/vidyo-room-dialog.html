@@ -1,0 +1,14 @@
+<div mat-dialog-content>
+  <p class="">Create/Join Conference Room</p>
+  <div>
+    <mat-label> Username:</mat-label>
+    <input matInput [(ngModel)]="data.userName">
+  </div>
+  <div>
+    <mat-label> Room:</mat-label>
+    <input matInput [(ngModel)]="data.roomName">
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Submit</button>
+</div>
