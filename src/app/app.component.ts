@@ -1,12 +1,5 @@
-import { Component, OnInit, OnChanges, DoCheck, AfterViewInit, OnDestroy, ViewChild} from '@angular/core';
-import { Router, Event as RouterEvent, ActivatedRoute, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from "@angular/router";
-import { CommonModule } from "@angular/common";
-
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/mergeMap';
-
-
+import {Component} from '@angular/core';
+import {Router, ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -16,11 +9,14 @@ import 'rxjs/add/operator/mergeMap';
 export class AppComponent {
   title = 'app';
 
-  constructor(public router: Router, public activatedRoute: ActivatedRoute) { }
+  constructor(public router: Router, public activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit() {
     try {
     }
-    catch (err) { console.error(err); }
+    catch (err) {
+      console.error(err);
+    }
   }
 }
