@@ -5,7 +5,7 @@ function onVidyoClientLoaded(status) {
   switch (status.state) {
     case "READY":
       VC.CreateVidyoConnector({
-        viewId: "vidyo-container",
+        viewId: "connected-video-chat",
         viewStyle: "VIDYO_CONNECTORVIEWSTYLE_Default",
         remoteParticipants: 10,
         logFileFilter: "warning all@VidyoConnector info@VidyoClient",

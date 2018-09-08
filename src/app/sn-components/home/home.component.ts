@@ -1,3 +1,5 @@
+declare const require: any;
+
 import {Component, OnInit, AfterViewInit, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogConfig} from "@angular/material";
 import * as jsSHA from "jssha";
@@ -21,14 +23,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
   private expiresInSeconds = 86400;
   private host = "prod.vidyo.io";
 
-  private userName = "RSystems";
-  private roomName = "VidyoConfRoom";
+  public userName = "RSystems";
+  public roomName = "VidyoConfRoom";
   private dialog: MatDialog;
   private messages: VidyoChatMessage[];
-  public participants: VidyoParticipant[];
 
-  private preview: boolean = true;
-  private muted: boolean = false;
+  public participants: VidyoParticipant[] = [];
+
+  public preview: boolean = true;
+  public muted: boolean = false;
   public connected: boolean = false;
 
   constructor(private matDialog: MatDialog) {
@@ -94,16 +97,19 @@ export class HomeComponent implements OnInit, AfterViewInit {
           this.connected = true;
         },
         onFailure: reason => {
+          this.connected = false;
           console.error("Connection Failed : ", reason);
         },
         onDisconnected: reason => {
+          this.connected = false;
           console.log("Connection Disconnected - " + reason);
         }
       }).then(status => {
         if (status) {
           this.connected = true;
           this.registerParticipantEventListener();
-          this.registerMessageEventListener();
+
+          // this.registerMessageEventListener(); // UI not ready yet.
         }
       }).catch(() => {
         console.log('Connect Error');
@@ -114,16 +120,17 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   private registerParticipantEventListener() {
     console.log("Registering for Participant's events");
+    let that = this; // can use .bind() as well.
 
     vidyoConnector.RegisterParticipantEventListener(
       {
         onJoined: (participant) => {
           console.log('Joined', participant);
-          this.addNewParticipant(new VidyoParticipant(participant.id, participant.name));
+          that.addNewParticipant(participant.id, participant.name);
         },
         onLeft: (participant) => {
           console.log('Left', participant);
-          this.removeParticipant(new VidyoParticipant(participant.id, participant.name));
+          that.removeParticipant(participant.id);
         },
         onDynamicChanged: (participants, cameras) => {
         },
@@ -174,12 +181,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
   }
 
-  private addNewParticipant(vidyoParticipant: VidyoParticipant) {
-    this.participants.push(vidyoParticipant);
+  private addNewParticipant(participantId: String, participantName: String) {
+    this.participants.push(new VidyoParticipant(participantId, participantName));
   }
 
-  private removeParticipant(deletedParticipant: VidyoParticipant) {
-    this.participants.filter(vidyoParticipant => vidyoParticipant.participantId !== deletedParticipant.participantId);
+  private removeParticipant(deletedParticipantId: String) {
+    this.participants.filter(vidyoParticipant => vidyoParticipant.participantId !== deletedParticipantId);
+  }
+
+  getParticipantAbbr(pt: VidyoParticipant) {
+    return pt.participantName.match(/\b(\w)/g).join('').toUpperCase();
   }
 }
 

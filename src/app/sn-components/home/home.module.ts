@@ -5,7 +5,6 @@ import {Routing} from './home.route';
 import {HomeComponent, VidyoRoomDialog} from './home.component';
 
 
-import '../../../assets/scripts/sn.js';
 import {FormsModule} from "@angular/forms";
 import {MatDialogModule, MatFormFieldModule} from "@angular/material";
 
