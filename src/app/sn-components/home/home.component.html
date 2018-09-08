@@ -1,37 +1,58 @@
-<div class="row" style="width: 100%; height: 100%">
-
-  <div class="col-md-1">
-    <div class="sn-menu-item">
-      <span class="sn-menu-icon material-icons">supervisor_account</span>
-      <div>Participants</div>
+<div class="container">
+  <div class="box-wrapper chat-main-container">
+    <div class="user-list">
+      <header>
+        <div class="logo"><img src='assets/images/userlist-logo.png'></div>
+        <div><span>Meeting ID</span>{{roomName}}</div>
+        <div><span>Total Participants</span>({{participants.length}})</div>
+      </header>
       <ul>
-        <li *ngFor="let pt of participants">{{pt.participantName}}</li>
+        <li *ngFor="let pt of participants">
+          <span class="name-icon" style="background:#89d1fe">{{getParticipantAbbr(pt)}}</span>
+          {{pt.participantName}}
+        </li>
       </ul>
     </div>
-  </div>
+    <div class="chat">
+      <header>
+        <div class="logo mobile-device"><img src='assets/images/userlist-logo.png'></div>
+        <div class="username mobile-device"><span>Meeting ID</span>ID836585</div>
+        <div class="username mobile-device"><span>Total Member</span>(10)</div>
+        <div class="username"><span>Username</span>{{userName}}</div>
+        <div class="username">{{connected === true ? 'You are Connected' : 'You are Disconnected'}}</div>
+        <div class="logout"><a href="#"><img src="assets/images/logout.png"/></a></div>
+      </header>
 
-  <div class="col-md-10">
-    <div class="sn-page-content">
-      <div class="sn-page-content-top">
-        <div class="sn-inner-wrapper" data-sn-padding="1">
-          <div class="sn-content-header sn-float-left">
-            <span
-              class="sn-block-td">{{connected === true ? 'You are Connected to the Conference' : 'Disconnected from the Conference'}}</span>
-          </div>
-          <div class="sn-menu-item sn-float-right" (click)="toggleMic()">
-            <span class="sn-menu-icon material-icons">mic</span>
-          </div>
-          <div class="sn-menu-item sn-float-right" (click)="toggleConnect()">
-            <span class="sn-menu-icon material-icons">call</span>
-          </div>
-          <div class="sn-menu-item sn-float-right sn-vidyo-videocam" (click)="togglePreview()">
-            <span class="sn-menu-icon material-icons">videocam</span>
+      <div></div>
+
+      <!-- start video chat section 1 -->
+      <div class="video-chat-box" id="video-call-start" style="display: none">
+        <div class="start-video-chat">
+          <div class="user-border">
+            <img src="assets/images/user-icon.png"/>
           </div>
         </div>
+        <button id="start-video-btn" class="start-video-btn">Start Video Call <img src="assets/images/video-icon.png"/></button>
       </div>
-    </div>
-    <div id="vidyo-container" style="width: 100%; height: 80%;">
+      <!-- end video chat section -->
+
+      <!-- start video chat section 2 -->
+      <div class="video-chat-box">
+        <div class="video-section" id="connected-video-chat">
+          <img src="assets/images/video.jpg" class="img-responsive"/>
+        </div>
+        <div class="video-chat-controls">
+          <a href="#" [class.mute]="!preview" class="video" (click)="togglePreview()"></a>
+          <a href="#" [class.mute]="muted" class="voice" (click)="toggleMic()"></a>
+          <a href="#" [ngClass]="{
+            'connect' : !connected,
+            'disconnect' : connected
+          }" (click)="toggleConnect()"></a>
+        </div>
+      </div>
+      <!-- end video chat section -->
+
     </div>
   </div>
 </div>
-
+<div class="main-bg"></div>
