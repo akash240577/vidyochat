@@ -2,6 +2,7 @@ declare const require: any;
 
 import {Component, OnInit, AfterViewInit, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogConfig} from "@angular/material";
+
 declare var jsSHA: any;
 import {VidyoChatMessage} from './dto/VidyoChatMessage';
 import {VidyoParticipant} from "./dto/VidyoParticipant";
@@ -26,7 +27,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   public userName = "RSystems";
   public roomName = "VidyoConfRoom";
   private dialog: MatDialog;
-  private messages: VidyoChatMessage[];
+
+  // private messages: VidyoChatMessage[];
 
   public participants: VidyoParticipant[] = [];
 
@@ -150,7 +152,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     vidyoConnector.RegisterMessageEventListener({
       onChatMessageReceived: (participant, chatMessage) => {
         console.log(`message received for participant ${participant.id}:${participant.name} - ${chatMessage.body}`);
-        this.messages.push(new VidyoChatMessage(participant.id, participant.name, chatMessage.body));
+        // this.messages.push(new VidyoChatMessage(participant.id, participant.name, chatMessage.body));
       }
     }).then(() => {
       console.log("Registered with Message Events Listener");

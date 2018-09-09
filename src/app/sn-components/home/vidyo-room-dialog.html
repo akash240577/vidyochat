@@ -1,14 +1,17 @@
 <div mat-dialog-content>
-  <p class="">Create/Join Conference Room</p>
-  <div>
-    <mat-label> Username:</mat-label>
-    <input class="input-row" [(ngModel)]="data.userName">
-  </div>
-  <div>
-    <mat-label> RoomID:</mat-label>
-    <input class="input-row" [(ngModel)]="data.roomName">
+
+<div class="login-container">
+  <div class="box-wrapper">
+    <h2>Sign in to Continue Join Vidyo Meeting</h2>
+    <div class="input-row">
+      <input type="text" [(ngModel)]="data.userName" name="username" placeholder="Enter Username"/>
+    </div>
+    <div class="input-row">
+      <input type="text" [(ngModel)]="data.roomName" name="meetingid" placeholder="Enter Meeting ID"/>
+    </div>
+    <div class="text-right">
+      <button mat-button [mat-dialog-close]="data" cdkFocusInitial type="button" class="btn-login">Join Meeting</button>
+    </div>
   </div>
 </div>
-<div mat-dialog-actions>
-  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Submit</button>
 </div>

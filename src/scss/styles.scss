@@ -4,7 +4,6 @@
  * @author Shashi Kapoor Singh.
  * @since  09.04.2018
  */
-
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 /*reset css*/
@@ -63,9 +62,6 @@ html, body {
 }
 
 .box-wrapper {
-  border-radius: 6px;
-  -webkit-box-shadow: 0px 4px 10px 4px rgba(31, 30, 77, 0.24);
-  box-shadow: 0px 4px 10px 4px rgba(31, 30, 77, 0.24);
   background: #ffffff;
 }
 
@@ -84,11 +80,11 @@ html, body {
 }
 
 .login-container .box-wrapper {
-  padding: 40px;
+  padding: 40px 80px;
 }
 
 .login-container h2 {
-  font-size: 1.3em;
+  font-size: 1.1em;
   color: #000000;
   padding-bottom: 20px;
 }
@@ -126,12 +122,13 @@ html, body {
   -moz-box-shadow: inset 0 0 6px rgba(255, 255, 255, .78);
   -webkit-box-shadow: inset 0 0 6px rgba(255, 255, 255, .78);
   box-shadow: inset 0 0 6px rgba(255, 255, 255, .78);
+  cursor: pointer;
 }
 
 /* chat and user listing page */
 .chat-main-container {
-  max-width: 75%;
-  min-width: 75%;
+  max-width: 80%;
+  min-width: 80%;
   height: 75%;
   min-height: 500px;
   display: flex;
@@ -139,7 +136,7 @@ html, body {
 }
 
 .chat-main-container .user-list {
-  min-width: 350px;
+  min-width: 300px;
   background: #ffffff;
   border-radius: 6px 0 0 6px;
 }
@@ -158,6 +155,7 @@ html, body {
 .chat-main-container .user-list header > div {
   flex-grow: 1;
   font-weight: bold;
+  text-align: center;
 }
 
 .chat-main-container .user-list header > div span {
@@ -241,6 +239,7 @@ html, body {
   overflow: auto;
   display: flex;
   flex-direction: column;
+  background: url("assets/images/user-icon-bg.png") no-repeat center;
 }
 
 .user-border {
@@ -405,4 +404,8 @@ html, body {
 
 .video-chat-controls a.connect {
   background-position: -131px 0;
+}
+
+#sn-main-wrapper {
+  height: 100%;
 }

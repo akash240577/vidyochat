@@ -20,7 +20,6 @@
         <div class="username mobile-device"><span>Total Member</span>(10)</div>
         <div class="username"><span>Username</span>{{userName}}</div>
         <div class="username">{{connected === true ? 'You are Connected' : 'You are Disconnected'}}</div>
-        <div class="logout"><a href="#"><img src="assets/images/logout.png"/></a></div>
       </header>
 
       <div></div>
@@ -39,7 +38,6 @@
       <!-- start video chat section 2 -->
       <div class="video-chat-box">
         <div class="video-section" id="connected-video-chat">
-          <img src="assets/images/video.jpg" class="img-responsive"/>
         </div>
         <div class="video-chat-controls">
           <a href="#" [class.mute]="!preview" class="video" (click)="togglePreview()"></a>
