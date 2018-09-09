@@ -7,7 +7,7 @@ import {Observable, of} from "rxjs";
 // This statement will load the home component first, so that video container div element is available.
 declare const require: any;
 
-import {Component, OnInit, AfterViewInit, Inject} from '@angular/core';
+import {Component, OnInit, AfterViewInit, Inject, NgZone} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogConfig} from "@angular/material";
 
 // library to generate auth token
@@ -66,7 +66,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
    *
    * @param matDialog, material modal dialog
    */
-  constructor(private matDialog: MatDialog) {
+  constructor(public zone: NgZone, private matDialog: MatDialog) {
     this.dialog = matDialog;
   }
 
@@ -250,24 +250,28 @@ export class HomeComponent implements OnInit, AfterViewInit {
   /**
    * TODO: fix list refresh on UI.
    * Adds a new participant to the list.
-   * Trying Observable to update the participants list reference, no luck so far
+   * Trying Observable to update the participants list reference, no luck, have to use zone.
    * @param participantId participant id
    * @param participantName participant name
    */
   private addNewParticipant(participantId: String, participantName: String) {
-    of(new VidyoParticipant(participantId, participantName)).subscribe((data) => this.participants = [data, ...this.participants]);
+    this.zone.run(() => this.participants = [new VidyoParticipant(participantId, participantName), ...this.participants]);
+    // of(new VidyoParticipant(participantId, participantName)).subscribe((data) => this.participants = [data, ...this.participants]);
   }
 
   /**
    * TODO: fix list refresh on UI.
    * Remove participant from the list
-   * Trying Observable to update the participants list reference, no luck so far
+   * Trying Observable to update the participants list reference, no luck, have to use zone.
    * @param deletedParticipantId id of the deleted participant
    */
   private removeParticipant(deletedParticipantId: String) {
-    of(deletedParticipantId).subscribe(
-      (pId) => this.participants = this.participants.filter(vidyoParticipant => vidyoParticipant.participantId !== deletedParticipantId)
-    );
+
+    this.zone.run(() => this.participants = this.participants.filter(vidyoParticipant => vidyoParticipant.participantId !== deletedParticipantId))
+
+    // of(deletedParticipantId).subscribe(
+    //   (pId) => this.participants = this.participants.filter(vidyoParticipant => vidyoParticipant.participantId !== deletedParticipantId)
+    // );
   }
 
   /**
