@@ -1,0 +1,91 @@
+{
+  "configVersion": 1,
+  "index": "https://debugmodedotnet.github.io/vidyochatang6/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://debugmodedotnet.github.io/vidyochatang6/favicon.ico",
+        "https://debugmodedotnet.github.io/vidyochatang6/index.html"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://debugmodedotnet.github.io/vidyochatang6/assets/images/bg1 - Copy.jpg",
+        "https://debugmodedotnet.github.io/vidyochatang6/assets/images/bg1.jpg",
+        "https://debugmodedotnet.github.io/vidyochatang6/assets/images/bg_blur.png",
+        "https://debugmodedotnet.github.io/vidyochatang6/assets/images/logo.png",
+        "https://debugmodedotnet.github.io/vidyochatang6/assets/images/logout.png",
+        "https://debugmodedotnet.github.io/vidyochatang6/assets/images/main-bg.png",
+        "https://debugmodedotnet.github.io/vidyochatang6/assets/images/send-icon.png",
+        "https://debugmodedotnet.github.io/vidyochatang6/assets/images/small-video.jpg",
+        "https://debugmodedotnet.github.io/vidyochatang6/assets/images/user-icon.png",
+        "https://debugmodedotnet.github.io/vidyochatang6/assets/images/userlist-logo.png",
+        "https://debugmodedotnet.github.io/vidyochatang6/assets/images/video-icon.png",
+        "https://debugmodedotnet.github.io/vidyochatang6/assets/images/video.jpg",
+        "https://debugmodedotnet.github.io/vidyochatang6/assets/images/videochat-icon.png",
+        "https://debugmodedotnet.github.io/vidyochatang6/assets/scripts/VidyoClient.js",
+        "https://debugmodedotnet.github.io/vidyochatang6/assets/scripts/VidyoClientLoad.js",
+        "https://debugmodedotnet.github.io/vidyochatang6/assets/scripts/bootstrap.min.js",
+        "https://debugmodedotnet.github.io/vidyochatang6/assets/scripts/jquery-3.3.1.slim.min.js",
+        "https://debugmodedotnet.github.io/vidyochatang6/assets/scripts/sha.js",
+        "https://debugmodedotnet.github.io/vidyochatang6/assets/scripts/sha1.js",
+        "https://debugmodedotnet.github.io/vidyochatang6/assets/scripts/sha256.js",
+        "https://debugmodedotnet.github.io/vidyochatang6/assets/scripts/sha3.js",
+        "https://debugmodedotnet.github.io/vidyochatang6/assets/scripts/sha512.js"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://debugmodedotnet.github.io/vidyochatang6/assets/images/bg1 - Copy.jpg": "ffbc50788029155a085f53e79834d8e1d4818ae1",
+    "https://debugmodedotnet.github.io/vidyochatang6/assets/images/bg1.jpg": "ffbc50788029155a085f53e79834d8e1d4818ae1",
+    "https://debugmodedotnet.github.io/vidyochatang6/assets/images/bg_blur.png": "ce3afef151b7e6b855f3cc4b4fbf5fd3c9aed57f",
+    "https://debugmodedotnet.github.io/vidyochatang6/assets/images/logo.png": "2765066cf5e96c3861e7d22358448ee5e76fcd6b",
+    "https://debugmodedotnet.github.io/vidyochatang6/assets/images/logout.png": "f1b58da4d31eda73f6bf084c72322a8a1b5771e1",
+    "https://debugmodedotnet.github.io/vidyochatang6/assets/images/main-bg.png": "8ab6b00f047d6185f38a59a7da9282f6c78a4be8",
+    "https://debugmodedotnet.github.io/vidyochatang6/assets/images/send-icon.png": "a36e5ed5c0bcf7b0e8cbba6a79b353ef1682e57b",
+    "https://debugmodedotnet.github.io/vidyochatang6/assets/images/small-video.jpg": "55cbcbfe7a732e07c980cd2f8513fa9e74a20187",
+    "https://debugmodedotnet.github.io/vidyochatang6/assets/images/user-icon.png": "18b1f903fa990e5f14b4dd45fdfad277816426d5",
+    "https://debugmodedotnet.github.io/vidyochatang6/assets/images/userlist-logo.png": "10ac42f490259ffd16ec3996e7bbddef07998bbb",
+    "https://debugmodedotnet.github.io/vidyochatang6/assets/images/video-icon.png": "b099cad993d85649be1802f5c1fd47ed998994f6",
+    "https://debugmodedotnet.github.io/vidyochatang6/assets/images/video.jpg": "8cc48a9d48f491d2db4ddb07ebaab2aa1785c949",
+    "https://debugmodedotnet.github.io/vidyochatang6/assets/images/videochat-icon.png": "c5392f24df04f1e4a5cb966e17283a35b6096fac",
+    "https://debugmodedotnet.github.io/vidyochatang6/assets/scripts/VidyoClient.js": "dec37aca016c739d9899be4da1f19264de71a6e9",
+    "https://debugmodedotnet.github.io/vidyochatang6/assets/scripts/VidyoClientLoad.js": "b9ca1596a3c58368f2c56da7cc11244b8fc28b2f",
+    "https://debugmodedotnet.github.io/vidyochatang6/assets/scripts/bootstrap.min.js": "75a42212affc118fef849aba4b9326a7da2acda1",
+    "https://debugmodedotnet.github.io/vidyochatang6/assets/scripts/jquery-3.3.1.slim.min.js": "bc5836992c0b260496ba520fe1336d499bf06eb7",
+    "https://debugmodedotnet.github.io/vidyochatang6/assets/scripts/sha.js": "5bfb1642f4f2f84e5fe1701f1d6ae36843386498",
+    "https://debugmodedotnet.github.io/vidyochatang6/assets/scripts/sha1.js": "e8112778189a17fb4fdee02166c1d76402509c4d",
+    "https://debugmodedotnet.github.io/vidyochatang6/assets/scripts/sha256.js": "c2971d0513ff7db092ea0fbaf41465383398e66f",
+    "https://debugmodedotnet.github.io/vidyochatang6/assets/scripts/sha3.js": "331ba014a62fdcc1b88d3741bc9aad5a9c968a57",
+    "https://debugmodedotnet.github.io/vidyochatang6/assets/scripts/sha512.js": "d16ca7a292bcd0b6bd0db5e6203a90f1a0247847",
+    "https://debugmodedotnet.github.io/vidyochatang6/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "https://debugmodedotnet.github.io/vidyochatang6/index.html": "b0e3c3adcc8b033d796dca4a43f667bdc6ac9f50"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
