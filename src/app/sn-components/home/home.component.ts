@@ -2,7 +2,7 @@ declare const require: any;
 
 import {Component, OnInit, AfterViewInit, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogConfig} from "@angular/material";
-import * as jsSHA from "jssha";
+declare var jsSHA: any;
 import {VidyoChatMessage} from './dto/VidyoChatMessage';
 import {VidyoParticipant} from "./dto/VidyoParticipant";
 
