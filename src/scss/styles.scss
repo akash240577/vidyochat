@@ -50,7 +50,7 @@ html, body {
 }
 
 .main-bg {
-  background: url(images/main-bg.png) no-repeat right bottom;
+  background: url(assets/images/main-bg.png) no-repeat right bottom;
   opacity: 0.2;
   filter: alpha(opacity=50);
   width: 256px;
@@ -323,7 +323,7 @@ html, body {
   display: inline-block;
   width: 52px;
   height: 52px;
-  background: url('images/videochat-icon.png') no-repeat 0 0;
+  background: url('assets/images/videochat-icon.png') no-repeat 0 0;
   margin-right: 10px;
   border-radius: 50%;
   box-shadow: 0 0 5px 3px rgba(0, 0, 0, .3);
