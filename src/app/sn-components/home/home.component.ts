@@ -78,7 +78,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
    * Open dialog after 2 seconds, have to added delay due to an issue with material dialog.
    */
   ngAfterViewInit() {
-    setTimeout(() => this.openDialog(), 2000)
+    setTimeout(() => this.openDialog(), 1000)
   }
 
   /**
@@ -143,6 +143,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
         onSuccess: () => {
           console.log("Connected");
           this.connected = true;
+          this.addNewParticipant("1", `${this.userName} (You)`);
         },
         onFailure: reason => {
           this.connected = false;
@@ -238,7 +239,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
   toggleConnect() {
     if (this.connected) {
       console.debug("Disconnecting video call");
-      vidyoConnector.Disconnect();
+      vidyoConnector.Disconnect(); // need to check success, before removing participants.
+      this.removeAllParticipants();
       this.connected = false;
     } else {
       this.startVideoCall();
@@ -246,20 +248,26 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   /**
+   * TODO: fix list refresh on UI.
    * Adds a new participant to the list.
+   * Trying Observable to update the participants list reference, no luck so far
    * @param participantId participant id
    * @param participantName participant name
    */
   private addNewParticipant(participantId: String, participantName: String) {
-    this.participants.push(new VidyoParticipant(participantId, participantName));
+    of(new VidyoParticipant(participantId, participantName)).subscribe((data) => this.participants = [data, ...this.participants]);
   }
 
   /**
+   * TODO: fix list refresh on UI.
    * Remove participant from the list
+   * Trying Observable to update the participants list reference, no luck so far
    * @param deletedParticipantId id of the deleted participant
    */
   private removeParticipant(deletedParticipantId: String) {
-    this.participants.filter(vidyoParticipant => vidyoParticipant.participantId !== deletedParticipantId);
+    of(deletedParticipantId).subscribe(
+      (pId) => this.participants = this.participants.filter(vidyoParticipant => vidyoParticipant.participantId !== deletedParticipantId)
+    );
   }
 
   /**
@@ -274,7 +282,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
    * Clears the participants list on disconnect.
    */
   private removeAllParticipants() {
-    of().subscribe(data => this.participants = []);
+    console.log("Removing all participants");
+    of([]).subscribe(data => this.participants = data);
   }
 }
 
