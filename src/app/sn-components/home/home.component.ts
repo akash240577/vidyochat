@@ -1,4 +1,6 @@
 // This statement will load the home component first, so that video container div element is available.
+import {ScriptService} from "../../script.service";
+
 declare const require: any;
 
 /**
@@ -6,7 +8,6 @@ declare const require: any;
  * Home Component, responsible for Participants list and Video Chat UI.
  */
 import {Observable, of} from "rxjs";
-
 
 
 import {Component, OnInit, AfterViewInit, Inject, NgZone} from '@angular/core';
@@ -68,7 +69,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
    *
    * @param matDialog, material modal dialog
    */
-  constructor(public zone: NgZone, private matDialog: MatDialog) {
+  constructor(public zone: NgZone, private matDialog: MatDialog, private scriptService: ScriptService) {
     this.dialog = matDialog;
   }
 
@@ -80,7 +81,11 @@ export class HomeComponent implements OnInit, AfterViewInit {
    * Open dialog after 2 seconds, have to added delay due to an issue with material dialog.
    */
   ngAfterViewInit() {
-    setTimeout(() => this.openDialog(), 2000)
+    setTimeout(() => this.openDialog(), 2000);
+
+    this.scriptService.load('videoClient').then(data => {
+      console.log('script loaded ', data);
+    }).catch(error => console.log(error));
   }
 
   /**
@@ -290,6 +295,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
   private removeAllParticipants() {
     console.log("Removing all participants");
     of([]).subscribe(data => this.participants = data);
+  }
+
+  loadScript(url) {
+    console.log('preparing to load...')
+    let node = document.createElement('script');
+    node.src = url;
+    node.type = 'text/javascript';
+    node.async = true;
+    node.charset = 'utf-8';
+    document.getElementsByTagName('head')[0].appendChild(node);
   }
 }
 
