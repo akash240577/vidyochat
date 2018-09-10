@@ -1,11 +1,13 @@
+// This statement will load the home component first, so that video container div element is available.
+declare const require: any;
+
 /**
  * @author R Systems Inc.
  * Home Component, responsible for Participants list and Video Chat UI.
  */
 import {Observable, of} from "rxjs";
 
-// This statement will load the home component first, so that video container div element is available.
-declare const require: any;
+
 
 import {Component, OnInit, AfterViewInit, Inject, NgZone} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogConfig} from "@angular/material";
@@ -78,7 +80,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
    * Open dialog after 2 seconds, have to added delay due to an issue with material dialog.
    */
   ngAfterViewInit() {
-    setTimeout(() => this.openDialog(), 1000)
+    setTimeout(() => this.openDialog(), 3000)
   }
 
   /**
