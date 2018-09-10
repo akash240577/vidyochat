@@ -80,7 +80,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
    * Open dialog after 2 seconds, have to added delay due to an issue with material dialog.
    */
   ngAfterViewInit() {
-    setTimeout(() => this.openDialog(), 3000)
+    setTimeout(() => this.openDialog(), 2000)
   }
 
   /**
